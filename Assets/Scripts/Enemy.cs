@@ -5,6 +5,8 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] List<Waypoint> waypoints = new List<Waypoint>();
+    [SerializeField] float yOffset = 0;
+    [SerializeField] [Range(0f,5f)] float speed;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,8 +17,20 @@ public class Enemy : MonoBehaviour
     {
         foreach (Waypoint waypoint in waypoints)
         {
-            transform.position = waypoint.transform.position + new Vector3(0,5,0);
-            yield return new WaitForSeconds(1f);
+            //Acá defino la posición incial, la final y cuánto me voy a mover entre esos puntos
+            Vector3 startPosition = transform.position;
+            Vector3 endPosition = waypoint.transform.position + new Vector3(0, yOffset, 0);
+            float travelPercent=0f;
+
+            transform.LookAt(waypoint.transform.position);
+            // Con un while defino cómo incrementar travelPercent.
+            while(travelPercent<1f)
+            {
+                travelPercent += Time.deltaTime * speed;
+                transform.position = Vector3.Lerp(startPosition, endPosition, travelPercent);
+                yield return new WaitForEndOfFrame();
+            }
+
         }
     }
 

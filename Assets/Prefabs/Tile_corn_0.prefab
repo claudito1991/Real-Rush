@@ -193,6 +193,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8383428706131851647}
   - component: {fileID: 6534747237446299845}
+  - component: {fileID: 3489021916359676662}
   m_Layer: 0
   m_Name: Tile_corn_0
   m_TagString: Untagged
@@ -228,6 +229,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cbf6c3cd0ff0a479468059c49fd707, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &3489021916359676662
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6079335856280299766}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10.071598, y: 0.43057066, z: 10.1108675}
+  m_Center: {x: -0.019636154, y: 0.16690168, z: -0.00000047683716}
 --- !u!1 &8550489629689822871
 GameObject:
   m_ObjectHideFlags: 0

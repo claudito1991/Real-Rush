@@ -4,15 +4,30 @@ using UnityEngine;
 
 public class EnemyLocator : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] int goldReward = 25;
+    [SerializeField] int goldPenalty = 25;
+    Bank bank;
+
+    private void Start()
     {
-        
+        bank = FindObjectOfType<Bank>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void GoldReward()
     {
-        
+        if(bank == null) 
+        {
+            return;
+        }
+        bank.Deposit(goldReward);
+    }
+
+    public void StealGold()
+    {
+        if (bank == null)
+        {
+            return;
+        }
+        bank.Withdraw(goldPenalty);
     }
 }

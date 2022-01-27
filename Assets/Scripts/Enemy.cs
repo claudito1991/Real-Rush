@@ -7,7 +7,13 @@ public class Enemy : MonoBehaviour
     [SerializeField] List<Waypoint> waypoints = new List<Waypoint>();
     [SerializeField] float yOffset = 0;
     [SerializeField] [Range(0f,5f)] float speed;
-    // Start is called before the first frame update
+    EnemyLocator enemyLocator;
+
+
+    private void Start()
+    {
+        enemyLocator = GetComponent<EnemyLocator>();
+    }
     void OnEnable()
     {
         FindPath();
@@ -56,6 +62,7 @@ public class Enemy : MonoBehaviour
 
         }
 
+        enemyLocator.StealGold();
         gameObject.SetActive(false);
     }
 

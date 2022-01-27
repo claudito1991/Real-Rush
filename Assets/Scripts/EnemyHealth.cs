@@ -6,10 +6,12 @@ public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] int enemyMaxHealth = 5;
     [SerializeField] int enemyCurrentHealth = 0;
+    EnemyLocator enemyLocator;
     // Start is called before the first frame update
     void OnEnable()
     {
         enemyCurrentHealth = enemyMaxHealth;
+        enemyLocator = GetComponent<EnemyLocator>();
     }
 
     private void OnParticleCollision(GameObject other)
@@ -18,7 +20,9 @@ public class EnemyHealth : MonoBehaviour
         Debug.Log("collision");
         if (enemyCurrentHealth<=0)
         {
+
             gameObject.SetActive(false);
+            enemyLocator.GoldReward();
         }
      
         

@@ -5,6 +5,7 @@ using TMPro;
 using System;
 
 //[ExecuteAlways]
+[RequireComponent(typeof(TextMeshPro))]
 public class CoordinatesLabeler : MonoBehaviour
 {
     [SerializeField] Color colorAvailable = Color.white;

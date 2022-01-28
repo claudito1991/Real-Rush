@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(EnemyLocator))]
 public class Enemy : MonoBehaviour
 {
     [SerializeField] List<Waypoint> waypoints = new List<Waypoint>();
@@ -49,11 +50,11 @@ public class Enemy : MonoBehaviour
             //Acá defino la posición incial, la final y cuánto me voy a mover entre esos puntos
             Vector3 startPosition = transform.position;
             Vector3 endPosition = waypoint.transform.position + new Vector3(0, yOffset, 0);
-            float travelPercent=0f;
+            float travelPercent = 0f;
 
             transform.LookAt(waypoint.transform.position);
             // Con un while defino cómo incrementar travelPercent.
-            while(travelPercent<1f)
+            while (travelPercent < 1f)
             {
                 travelPercent += Time.deltaTime * speed;
                 transform.position = Vector3.Lerp(startPosition, endPosition, travelPercent);
@@ -62,6 +63,11 @@ public class Enemy : MonoBehaviour
 
         }
 
+        FinishPath();
+    }
+
+    private void FinishPath()
+    {
         enemyLocator.StealGold();
         gameObject.SetActive(false);
     }

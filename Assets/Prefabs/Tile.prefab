@@ -99,7 +99,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0,0
+  m_text: 1,0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -183,6 +183,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b9d84569473e25408e9a585ea1bf455, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colorAvailable: {r: 1, g: 1, b: 1, a: 1}
+  colorBlocked: {r: 0.5, g: 0.5, b: 0.5, a: 1}
 --- !u!1 &3931841945074872973
 GameObject:
   m_ObjectHideFlags: 0
@@ -310,8 +312,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9cbf6c3cd0ff0a479468059c49fd707, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 607298943516131832, guid: 27808ed225ddce643ac736f4f9f68136, type: 3}
+  towerPrefab: {fileID: 8354580404067212745, guid: 27808ed225ddce643ac736f4f9f68136, type: 3}
   isPlaceable: 1
-  tower: {fileID: 8354580404067212745, guid: 27808ed225ddce643ac736f4f9f68136, type: 3}
 --- !u!65 &5072682236467331546
 BoxCollider:
   m_ObjectHideFlags: 0
